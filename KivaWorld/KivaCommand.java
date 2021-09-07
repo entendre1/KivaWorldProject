@@ -19,7 +19,7 @@ private KivaCommand(char key) {
 }
 public char getDirectionKey() {
 
-return 'a';
+return 'directionKey';
 }
 
 }
