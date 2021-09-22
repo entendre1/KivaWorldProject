@@ -1,8 +1,0 @@
-#BlueJ class context
-comment0.target=KivaCommand
-comment0.text=\r\n\ Write\ a\ description\ of\ KivaCommand\ here.\r\n\ \r\n\ @author\ (Christopher\ J.\ Walker)\ \r\n\ @version\ (Version\ 1.0)\r\n
-comment1.params=directionKey
-comment1.target=KivaCommand(char)
-comment2.params=
-comment2.target=char\ getDirectionKey()
-numComments=3
