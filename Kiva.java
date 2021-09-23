@@ -1,6 +1,6 @@
 
 /**
- * Write a description of Kiva here.
+ * Represents a Kiva Robot. 
  * 
  * @author (Christopher J. Walker) 
  * @version (9/21/2021)
@@ -18,7 +18,7 @@ private boolean carryingPod;
 private boolean successfullyDropped;
 private long motorLifeTime; 
  
- /** Constructor Comments
+ /** Instantiates a Kiva Object with a FloorMap object as an argument. 
   * 
   * 
   */   
@@ -34,7 +34,7 @@ public Kiva(FloorMap map){
 }
 
 /**
- * Constructor Comments
+ * Instantiates a Kiva Object with a FloorMap object and a Point object as arguments.
  */
 public Kiva(FloorMap map, Point currentLocation) {
     this.map = map;
@@ -45,7 +45,7 @@ public Kiva(FloorMap map, Point currentLocation) {
     this.motorLifeTime = 0;
 }
 /**
- * Move method comments
+ * Moves Kiva based on KivaCommand argument received
  */
 public void move(KivaCommand command) {
     //change to switch statement
@@ -68,7 +68,7 @@ else {
     
 }
 /**
- *  MoveForward method comments
+ *  Moves Kiva forward
  */
 private void moveForward() {
    Point delta;
@@ -117,7 +117,7 @@ private void moveForward() {
     
 }
 /**
- *  TurnLeft method comments
+ *  Turns Kiva left
  */
 private void turnLeft() {
     //change to switch statement
@@ -137,7 +137,7 @@ private void turnLeft() {
     
 }
 /**
- *  TurnRight method comments
+ *  Turns Kiva right
  */
 private void turnRight() {
     //change to switch statement
@@ -156,7 +156,7 @@ private void turnRight() {
     this.incrementMotorLifetime();
 }
 /**
- *  comments
+ *  Kiva takes pod 
  */
 private void takePod() {
     if (carryingPod == true) {
@@ -174,7 +174,7 @@ private void takePod() {
 
 }
 /**
- *  comments
+ *  Kiva drops pod
  */
 private void dropPod() {
      if(map.getObjectAtLocation(currentLocation) != FloorMapObject.DROP_ZONE)
@@ -196,20 +196,20 @@ private void dropPod() {
 }
 
 /**
- *  comments
+ *  Returns currentlocation
  */
 public Point getCurrentLocation(){
     return currentLocation;
 }
 
 /**
- *  comments
+ *  returns directionFacing
  */
 public FacingDirection getDirectionFacing() {
     return directionFacing;
 }
 /**
- *  comments
+ *  Returns boolean representing carryingPod
  */
 
 public boolean isCarryingPod() {
@@ -217,20 +217,20 @@ public boolean isCarryingPod() {
     return carryingPod;
 }
 /**
- *  comments
+ *  Returns boolean representing successfullyDropped
  */
 public boolean isSuccessfullyDropped() {
     
     return successfullyDropped;
 }
 /**
- *  comments
+ *  Returns motorLifeTime
  */
 public long getMotorLifetime() {
     return this.motorLifeTime;
 }
 /**
- *  comments
+ *  Increments motorLifeTime by 1000
  */
 private void incrementMotorLifetime() {
     this.motorLifeTime += 1000;
