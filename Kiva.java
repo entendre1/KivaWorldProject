@@ -1,11 +1,10 @@
 
 /**
- * Representation of a Kiva Robot.
+ * Write a description of Kiva here.
  * 
  * @author (Christopher J. Walker) 
- * @version (9/21/2021)
+ * @version (10/5/2021)
  */
-
 
 import edu.duke.Point;
 public class Kiva {
@@ -16,10 +15,10 @@ private boolean carryingPod;
 private boolean successfullyDropped;
 private long motorLifeTime; 
  
- /** Instantiates a Kiva and represents its location and environment via FloorMap @param map object. 
+  /** Constucts a Kiva and represents the location and environment of the Kiva.
+  *   @param map A FloorMap object that represents the location and environment of the Kiva.
   * 
-  * 
-  */   
+  */ 
 public Kiva(FloorMap map){
 
  this.map = map;
@@ -32,8 +31,11 @@ public Kiva(FloorMap map){
 }
 
 /**
- * Instantiates a Kiva and represents its environment via FloorMap @param map and location via Point @param currentLocation. 
- */
+ * Constructs a Kiva and represents its environment via a FloorMap object argument and initial location via Point object argument. 
+ * @param map A FloorMap object that represents the environment of the Kiva.
+ * @param currentLocation A Point object that sets the initial location of the Kiva.
+ */ 
+ 
 public Kiva(FloorMap map, Point currentLocation) {
     this.map = map;
     this.currentLocation = currentLocation;
@@ -43,10 +45,11 @@ public Kiva(FloorMap map, Point currentLocation) {
     this.motorLifeTime = 0;
 }
 /**
- * Moves Kiva based on KivaCommand @param command received.
+ * Moves Kiva based on which KivaCommand that is received.
+ * @param command A KivaCommand constant that represents a valid action that the Kiva robot can make. 
  */
 public void move(KivaCommand command) {
-    //change to switch statement
+    
 if (command == KivaCommand.FORWARD)
 {
     moveForward();
@@ -65,7 +68,7 @@ else {
 }
     
 }
-// Moves Kiva forward 
+//moves Kiva forward
 private void moveForward() {
    Point delta;
    int deltaX;
@@ -114,7 +117,7 @@ private void moveForward() {
 }
 // Turns Kiva Left
 private void turnLeft() {
-    //change to switch statement
+    
   if(this.directionFacing == directionFacing.UP) {
       this.directionFacing = directionFacing.LEFT;
     }
@@ -184,20 +187,23 @@ private void dropPod() {
 }
 
 /**
- *  Returns @return currentlocation
+ *  Returns the current location of the Kiva
+ *  @return Returns Point representing the current location of the Kiva.
  */
 public Point getCurrentLocation(){
     return currentLocation;
 }
 
 /**
- *  Returns @return directionFacing
+ *  Returns the direction that the Kiva is currently facing.
+ *  @return Returns FacingDirection that represents the direction that the Kiva is currently facing.
  */
 public FacingDirection getDirectionFacing() {
     return directionFacing;
 }
 /**
- *  Returns @return boolean representing carryingPod
+ *  Returns a boolean representing whether or not the Kiva is carrying a pod.
+ *  @return Returns a boolean representing whether or not the Kiva is carrying a pod.
  */
 
 public boolean isCarryingPod() {
@@ -205,14 +211,16 @@ public boolean isCarryingPod() {
     return carryingPod;
 }
 /**
- *  Returns @return boolean representing successfullyDropped
+ *  Returns a boolean representing whether or not the Kiva has successfully dropped a pod in the drop zone.
+ *  @return Returns a boolean representing whether or not the Kiva has successfully dropped a pod in the drop zone.
  */
 public boolean isSuccessfullyDropped() {
     
     return successfullyDropped;
 }
 /**
- *  Returns  @return motorLifeTime
+ *  Returns the current motor lifetime of the Kiva robot. 
+ *  @return Returns a long that represents the motor lifetime of the Kiva Robot in milliseconds. 
  */
 public long getMotorLifetime() {
     return this.motorLifeTime;
@@ -221,27 +229,4 @@ public long getMotorLifetime() {
 private void incrementMotorLifetime() {
     this.motorLifeTime += 1000;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
