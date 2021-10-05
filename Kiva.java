@@ -1,14 +1,12 @@
 
 /**
- * Represents a Kiva Robot. 
+ * Representation of a Kiva Robot.
  * 
  * @author (Christopher J. Walker) 
  * @version (9/21/2021)
  */
 
-/**
- * field comments
- */
+
 import edu.duke.Point;
 public class Kiva {
 private Point currentLocation;
@@ -18,7 +16,7 @@ private boolean carryingPod;
 private boolean successfullyDropped;
 private long motorLifeTime; 
  
- /** Instantiates a Kiva Object with a FloorMap object as an argument. 
+ /** Instantiates a Kiva and represents its location and environment via FloorMap @param map object. 
   * 
   * 
   */   
@@ -34,7 +32,7 @@ public Kiva(FloorMap map){
 }
 
 /**
- * Instantiates a Kiva Object with a FloorMap object and a Point object as arguments.
+ * Instantiates a Kiva and represents its environment via FloorMap @param map and location via Point @param currentLocation. 
  */
 public Kiva(FloorMap map, Point currentLocation) {
     this.map = map;
@@ -45,7 +43,7 @@ public Kiva(FloorMap map, Point currentLocation) {
     this.motorLifeTime = 0;
 }
 /**
- * Moves Kiva based on KivaCommand argument received
+ * Moves Kiva based on KivaCommand @param command received.
  */
 public void move(KivaCommand command) {
     //change to switch statement
@@ -67,9 +65,7 @@ else {
 }
     
 }
-/**
- *  Moves Kiva forward
- */
+// Moves Kiva forward 
 private void moveForward() {
    Point delta;
    int deltaX;
@@ -116,9 +112,7 @@ private void moveForward() {
    
     
 }
-/**
- *  Turns Kiva left
- */
+// Turns Kiva Left
 private void turnLeft() {
     //change to switch statement
   if(this.directionFacing == directionFacing.UP) {
@@ -136,9 +130,7 @@ private void turnLeft() {
     this.incrementMotorLifetime();
     
 }
-/**
- *  Turns Kiva right
- */
+// Turns Kiva Right
 private void turnRight() {
     //change to switch statement
   if(this.directionFacing == directionFacing.UP) {
@@ -155,9 +147,7 @@ private void turnRight() {
     }  
     this.incrementMotorLifetime();
 }
-/**
- *  Kiva takes pod 
- */
+// Kiva takes pod
 private void takePod() {
     if (carryingPod == true) {
         throw new IllegalMoveException(String.format("Illegal Move: Attempting To Take Pod While Carrying Pod. Can't TAKE %s from %s while carrying pod",
@@ -173,9 +163,7 @@ private void takePod() {
     }
 
 }
-/**
- *  Kiva drops pod
- */
+// Kiva drops pod
 private void dropPod() {
      if(map.getObjectAtLocation(currentLocation) != FloorMapObject.DROP_ZONE)
     {
