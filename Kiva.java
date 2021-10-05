@@ -184,20 +184,20 @@ private void dropPod() {
 }
 
 /**
- *  Returns currentlocation
+ *  Returns @return currentlocation
  */
 public Point getCurrentLocation(){
     return currentLocation;
 }
 
 /**
- *  returns directionFacing
+ *  Returns @return directionFacing
  */
 public FacingDirection getDirectionFacing() {
     return directionFacing;
 }
 /**
- *  Returns boolean representing carryingPod
+ *  Returns @return boolean representing carryingPod
  */
 
 public boolean isCarryingPod() {
@@ -205,21 +205,19 @@ public boolean isCarryingPod() {
     return carryingPod;
 }
 /**
- *  Returns boolean representing successfullyDropped
+ *  Returns @return boolean representing successfullyDropped
  */
 public boolean isSuccessfullyDropped() {
     
     return successfullyDropped;
 }
 /**
- *  Returns motorLifeTime
+ *  Returns  @return motorLifeTime
  */
 public long getMotorLifetime() {
     return this.motorLifeTime;
 }
-/**
- *  Increments motorLifeTime by 1000
- */
+// Increments Motor Lifetime by 1000 milliseconds.
 private void incrementMotorLifetime() {
     this.motorLifeTime += 1000;
 }
