@@ -1,9 +1,9 @@
 
 /**
- * Write a description of KivaCommand here.
+ * KivaCommand represents all possible commands that a Kiva can receive. 
  * 
  * @author (Christopher J. Walker) 
- * @version (Version 1.0)
+ * @version (10/5/2021)
  */
 
 /**
@@ -16,20 +16,16 @@ TURN_RIGHT ('R'),
 TAKE ('T'),
 DROP ('D');
 
-/**
- *  comments
- */
+
 private char directionKey;
 
-/**
- *  comments
- */
+
 KivaCommand(char directionKey) {
     this.directionKey = directionKey;
 }
 
 /**
- *  comments
+ *  Returns @return directionKey
  */
 public char getDirectionKey() {
 
